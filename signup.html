@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <div class="loader">
+      <img src="logo.png" width="150" height="150" class="center" />
+  </div>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <body background="background4.jpg">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Add the following script tag to handle form submission -->
+    <script>
+      function submitForm() {
+        var firstName = document.getElementsByName("firstName")[0].value;
+        var lastName = document.getElementsByName("lastName")[0].value;
+        var email = document.getElementsByName("email")[0].value;
+        var phone = document.getElementsByName("phone")[0].value;
+        var password = document.getElementsByName("password")[0].value;
+
+        // Create a new XMLHttpRequest object
+        var xhr = new XMLHttpRequest();
+
+        // Define the request URL and method
+        xhr.open("POST", "signup.py", true);
+
+        // Set the request header
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        // Define the request parameters
+        var params = "firstName=" + firstName + "&lastName=" + lastName + "&email=" + email + "&phone=" + phone + "&password=" + password;
+
+        // Send the request
+        xhr.send(params);
+      }
+    </script>
+
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+     
+        <form action="app.py" method='POST'>
+        <label>First Name</label>
+        <input type="text" name="first_Name" placeholder="first Name" />
+        <label>Last Name</label>
+        <input type="text" name="last_Name" placeholder="last Name" />
+        <label>Email</label>
+        <input type="email" name="email" placeholder="email" />
+        <label>Phone Number</label>
+        <input type="number" name="phone" placeholder="phone_nmber" />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="password" />
+        <input type="submit" value="Submit" />
+      </form>
+      </form>
+      <p>
+        <br />
+        <a href="term.html">Terms & Condition</a> and <a href="policy.html">Privacy Policy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already Have An Account? <a href="login.html">Login Here</a>
+    </p>
+    
+  </body>
+</html>
